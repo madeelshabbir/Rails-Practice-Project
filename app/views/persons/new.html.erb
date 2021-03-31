@@ -1,0 +1,21 @@
+<%# <form accept-charset="UTF-8" action="/persons" method="post">
+  <input type="text" name="person[name]" placeholder="Name" />
+  <input type="text" name="person[number]" placeholder="Phone Number" />
+  <input type="submit" value="Create" />
+</form> %>
+
+<%= form_for :person, url: :persons do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :number %><br>
+    <%= form.text_field :number %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
