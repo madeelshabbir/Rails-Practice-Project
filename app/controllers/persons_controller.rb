@@ -1,5 +1,10 @@
 class PersonsController < ApplicationController
+  before_action :show_all
+
   def new
+  end
+
+  def index
   end
 
   def create
@@ -13,13 +18,13 @@ class PersonsController < ApplicationController
   end
 
   def show
-
+    @person = Person.find_by_id(params[:id])
   end
 
   private
 
-  def find
-    @person = Person.find_by_id(params[:id])
+  def show_all
+    @persons = Person.all
   end
 
   def person_params

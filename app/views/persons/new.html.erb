@@ -4,7 +4,7 @@
   <input type="submit" value="Create" />
 </form> %>
 
-<%= form_for :person, url: :persons do |form| %>
+<%= form_with model: @person, url: :persons, local: true  do |form| %>
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
