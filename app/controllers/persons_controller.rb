@@ -1,10 +1,11 @@
 class PersonsController < ApplicationController
-  before_action :show_all
+  #before_action :show_all
 
   def new
   end
 
   def index
+    @persons = Person.all
   end
 
   def create
@@ -21,14 +22,29 @@ class PersonsController < ApplicationController
     @person = Person.find_by_id(params[:id])
   end
 
-  private
-
-  def show_all
-    @persons = Person.all
+  def edit
+    @person = Person.find(params[:id])
   end
 
+  def update
+    @person = Person.find(params[:id])
+
+    if @person.update(person_params)
+      redirect_to @person
+    else
+      render 'edit'
+    end
+  end
+
+  private
+
+  # def show_all
+  #   @persons = Person.all
+  # end
+
   def person_params
-    params.require(:person).permit(:name, :number)
+    params.permit(:name, :number)
+    #params.require(:person).permit(:name, :number)
     #params.require(:person).permit!
   end
 end
