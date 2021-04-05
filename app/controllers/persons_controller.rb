@@ -2,6 +2,7 @@ class PersonsController < ApplicationController
   #before_action :show_all
 
   def new
+    @person = Person.new
   end
 
   def index
@@ -14,7 +15,7 @@ class PersonsController < ApplicationController
     if @person.save
       redirect_to @person
     else
-      render "new"
+      render 'new'
     end
   end
 
@@ -43,8 +44,7 @@ class PersonsController < ApplicationController
   # end
 
   def person_params
-    params.permit(:name, :number)
-    #params.require(:person).permit(:name, :number)
+    params.require(:person).permit(:name, :number)
     #params.require(:person).permit!
   end
 end

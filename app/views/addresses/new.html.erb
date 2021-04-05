@@ -1,0 +1,20 @@
+<%= form_for [ @person, @person.build_address ], local: true  do |form| %>
+  <p>
+    <%= form.label :house %><br>
+    <%= form.text_field :house %>
+  </p>
+
+  <p>
+    <%= form.label :street %><br>
+    <%= form.text_field :street %>
+  </p>
+
+  <p>
+    <%= form.label :area %><br>
+    <%= form.text_field :area %>
+  </p>
+
+  <p>
+    <%= form.submit 'Add Address' %>
+  </p>
+<% end %>
