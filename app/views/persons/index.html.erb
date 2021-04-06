@@ -1,19 +1,23 @@
+<% content_for :head do %>
+  <title>Adeel</title>
+<% end %>
+
 <table>
   <tr>
     <th>Name</th>
     <th>Phone No</th>
     <th colspan="3"></th>
   </tr>
-
-  <% @persons.each do |person| %>
-    <tr>
-      <td><%= person.name %></td>
-      <td><%= person.number %></td>
-      <td>
+  <%# <% @persons.each do |person| %>
+    <%# <tr>
+      <td><%= person.name %><%# </td> %>
+      <%# <td><%= person.number %><%# </td> %>
+      <%# <td>
         <% if !person.address.nil? %>
-          <%= render person.address %>
-        <% end %>
-      </td>
+          <%# <%= render person.address %>
+        <%# <% end %>
+      <%# </td>
     </tr>
   <% end %>
+  <%= render partial: 'person', collection: @persons, as: :person if !@persons.nil? %>
 </table>

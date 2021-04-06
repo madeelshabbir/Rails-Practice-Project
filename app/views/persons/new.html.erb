@@ -18,6 +18,45 @@
   </p>
 
   <p>
+    <%# <%= check_box_tag :is_checked %>
+    <%# <%= label_tag :is_checked, "I own a dog" %>
+    <%# <%= radio_button_tag :age, 'child' %>
+    <%# <%= label_tag :age, "I am younger than 21" %>
+    <%# <%= radio_button_tag :age, 'adult' %>
+    <%# <%= label_tag :age, "I'm over 21" %>
+    <%# <%= text_area_tag :message, "Hi, nice site", size: "24x6" %>
+    <%# <%= password_field_tag :password %>
+    <%# <%= hidden_field_tag :parent_id, "5" %>
+    <%# <%= search_field :user, :name %>
+    <%# <%= telephone_field :user, :phone %>
+    <%# <%= date_field :user, :born_on %>
+    <%# <%= datetime_local_field :user, :graduation_day %>
+    <%# <%= month_field :user, :birthday_month %>
+    <%# <%= week_field :user, :birthday_week %>
+    <%# <%= url_field :user, :homepage %>
+    <%# <%= email_field :user, :address %>
+    <%# <%= color_field :user, :favorite_color %>
+    <%# <%= time_field :task, :started_at %>
+    <%# <%= number_field :product, :price, in: 1.0..20.0, step: 0.5 %>
+    <%# <%= range_field :product, :discount, in: 1..100 %>
+    <%# <%= select_tag(:city_id, options_for_select([['Lisbon', 1], ['Madrid', 2]])) %>
+    <%# <%= select(:person, :name, [['Lisbon', 1], ['Madrid', 2]]) %>
+    <%# <%= form.select(:name, [['Lisbon', 1], ['Madrid', 2]]) %>
+    <%# <%= form.select(:name) do %>
+      <%# <% [['Lisbon', 1], ['Madrid', 2]].each do |c| -%>
+        <%# <%= content_tag(:option, c.first, value: c.last) %>
+      <%# <% end %>
+    <%# <% end %>
+    <%# <% cities_array = Person.all.map { |city| [city.name, city.id] } %>
+    <%# <%= form.select(:name, cities_array) %>
+    <%# <%= collection_select(:person, :name, Person.all, :id, :name) %>
+    <%# <%= form.collection_select(:name, Person.all, :id, :name) %>
+    <%# <%= time_zone_select(:person, :name) %>
+    <%# <%= select_date Date.today, prefix: :start_date %>
+    <%# <%= date_select :person, :name %>
+  </p>
+
+  <p>
     <%= form.submit %>
   </p>
 <% end %>

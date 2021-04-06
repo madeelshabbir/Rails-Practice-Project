@@ -1,0 +1,9 @@
+<tr>
+  <td><%= person.name %></td>
+  <td><%= person.number %></td>
+  <td>
+    <% if !person.address.nil? %>
+      <%= render person.address %>
+    <% end %>
+  </td>
+</tr>

@@ -1,5 +1,6 @@
 class PersonsController < ApplicationController
   #before_action :show_all
+  #layout 'person', only: :show
 
   def new
     @person = Person.new
@@ -16,6 +17,7 @@ class PersonsController < ApplicationController
       redirect_to @person
     else
       render 'new'
+      #render 'new',  layout: 'person'
     end
   end
 
@@ -44,7 +46,7 @@ class PersonsController < ApplicationController
   # end
 
   def person_params
-    params.require(:person).permit(:name, :number)
-    #params.require(:person).permit!
+    #params.require(:person).permit(:name, :number)
+    params.require(:person).permit!
   end
 end
