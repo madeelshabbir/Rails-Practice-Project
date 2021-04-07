@@ -2,11 +2,15 @@ class PersonsController < ApplicationController
   #before_action :show_all
   #layout 'person', only: :show
 
+  before_action :authenticate_user!, except: [:index, :show]
+
   def new
     @person = Person.new
   end
 
   def index
+    #p session[:person]
+    #p flash[:person]
     @persons = Person.all
   end
 
@@ -24,6 +28,19 @@ class PersonsController < ApplicationController
 
   def show
     @person = Person.find_by_id(params[:id])
+    # session[:person] = @person
+    # p session[:person]
+    # # reset_session
+    # session.delete(:person)
+    # p session[:person]
+    # cookies[:person] = @person
+    # p cookies[:person]
+    # cookies.delete(:person)
+    # p cookies[:person]
+    # flash[:person] = @person
+    # p flash[:person]
+    # flash.clear
+    # p flash[:person]
   end
 
   def edit

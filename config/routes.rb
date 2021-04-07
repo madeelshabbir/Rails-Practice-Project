@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'persons#index'
+  devise_for :users, path_names: { sign_up: 'register' }
   #get '/persons/:id', to: 'persons#show', as: 'persons'
   # resources :persons do
   #   resources :addresses

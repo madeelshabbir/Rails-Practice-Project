@@ -1,4 +1,6 @@
 class AddressesController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
   def index
     @addresses = Address.all
   end
