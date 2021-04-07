@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_05_045009) do
+ActiveRecord::Schema.define(version: 2021_04_07_052703) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "house"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2021_04_05_045009) do
     t.string "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
   end
 
 end
