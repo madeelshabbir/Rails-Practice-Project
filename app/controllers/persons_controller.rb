@@ -14,6 +14,7 @@ class PersonsController < ApplicationController
     @person = Person.new(person_params)
 
     if @person.save
+      PersonMailer.with(person: @person).person_signed_up.deliver_later
       redirect_to @person
     else
       render 'new'
