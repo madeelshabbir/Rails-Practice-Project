@@ -69,3 +69,5 @@ group :development, :test do
 end
 
 gem 'mail'
+
+gem 'devise', '~>4.7'
