@@ -1,8 +1,10 @@
 class PersonsController < ApplicationController
+  include Personable
+
   #before_action :show_all
   #layout 'person', only: :show
 
-  before_action :authenticate_user!, except: [:index, :show]
+  # before_action :authenticate_user!, except: [:index, :show]
 
   def new
     @person = Person.new
@@ -61,8 +63,48 @@ class PersonsController < ApplicationController
     # p Person.order(:name)
     # p Person.order(id: :desc)
     # p Person.order(id: :desc, name: :asc)
-    @persons = Person.all
-    #puts @person.present?
+    # p Person.select("name")
+    # p Person.limit(2)
+    # p Person.limit(2).offset(4)
+    # p Person.select('sum(id)').group('name')
+    # p Person.group('name').count
+    # p Person.select('sum(id)').group('name').having("sum(id) < ?", 5)
+    # p Person.find_or_create_by(name: 'MAdeel')
+    # p Person.create_with(number: '0', email: 'adeel@gmail.com').find_or_create_by(name: 'MAdeel')
+    # p Person.find_or_create_by!(name: 'M.Adeel')
+    # p Person.find_or_initialize_by(name: 'M.Adeel')
+    # p Person.where('id < 10').limit(7).order('id asc').unscope(:order)
+    # p Person.where(id: 10, name: 'Adeel').unscope(where: :id)
+    # p Person.order('id asc').merge(Person.unscope(:order))
+    # p Person.where('id < 10').limit(5).order('id desc').only(:order, :where)
+    # p Person.where('id < 10').limit(7).order('id asc').reverse_order
+    # p Person.where(name: 'Adeel').rewhere(name: 'MAdeel')
+    # p Person.none
+    # person = Person.readonly.first
+    # person.name = 'Adeel'
+    # person.save
+    # p Person.joins(:address)
+    # p Person.left_outer_joins(:address)
+    # p Person.named
+    # p Person.named('Adeel')
+    # p Person.named('Adeel').identification(3)
+    # p Person.named('Adeel').merge(Person.identification(3))
+    # p Person.where(name: 'Adeel').unscoped.all
+    # p Person.find_by_sql('SELECT * FROM people')
+    # p Person.connection.select_all('SELECT * FROM people').to_hash
+    # p Person.ids
+    # p Person.exists?(id: [1,100,200])
+    # p Person.where(name: 'MAdeel').any?
+    # p Person.where(name: 'MAdeel').many?
+    # p Person.count
+    # p Person.includes(:address).count
+    # p Person.average('id')
+    # p Person.minimum('id')
+    # p Person.maximum('id')
+    # p Person.sum('id')
+    # p Person.includes(:address).all.explain
+    @persons = Person.includes(:address).all
+    # puts @person.present?
   end
 
   def create

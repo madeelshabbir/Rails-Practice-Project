@@ -1,5 +1,9 @@
 class Person < ApplicationRecord
   has_one :address
+  # scope :named, -> { where(name: 'Adeel') }
+  # scope :named, ->(name) { where('name = ?', name) }
+  # scope :identification, ->(id) { where('id < ?', id) }
+  # default_scope { where(name: 'Adeel') }
   validates :name , presence: true
     # exclusion: { in: %w(Adeel),
     #   message: -> (object, data) do
