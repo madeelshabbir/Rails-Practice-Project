@@ -1,0 +1,6 @@
+<p><%= @person.name %></p>
+<p><%= @person.number %></p>
+<p><%= @person.email %></p>
+<% if !@person.address.nil? %>
+  <%= render @person.address %>
+<% end %>

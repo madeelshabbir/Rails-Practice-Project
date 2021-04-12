@@ -1,0 +1,9 @@
+<% cache do %>
+  <%= @person.name %>,
+<% end %>
+
+Thank you for registering!
+
+Edit profile: <%= edit_person_url(@person, host: 'localhost:3000') %>
+
+<%= image_tag attachments['Ruby_On_Rails_Logo.svg'].url %>

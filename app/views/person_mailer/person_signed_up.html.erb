@@ -1,0 +1,11 @@
+<p>
+  <% cache do %>
+    <%= @person.name %>,
+  <% end %>
+</p>
+
+<p>Thank you for registering!</p>
+
+<p><%= link_to "Edit profile", edit_person_url(@person, host: 'localhost:3000') %></p>
+
+<%= image_tag attachments['Ruby_On_Rails_Logo.svg'].url %>

@@ -1,0 +1,26 @@
+<% content_for :head do %>
+  <title>Adeel</title>
+<% end %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Phone No</th>
+    <th>Email</th>
+  </tr>
+  <%# <% @persons.each do |person| %>
+    <%# <tr>
+      <td><%= person.name %><%# </td> %>
+      <%# <td><%= person.number %><%# </td> %>
+      <%# <td>
+        <% if !person.addWress.nil? %>
+          <%# <%= render person.address %>
+        <%# <% end %>
+      <%# </td>
+    </tr>
+  <% end %>
+  <%# <%= render partial: 'person', collection: @persons, spacer_template: 'product_ruler' %>
+  <%= render partial: 'person', collection: @persons, as: :person if !@persons.nil? %>
+</table>
+
+<%= paginate @persons %>
