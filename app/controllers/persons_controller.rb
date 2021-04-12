@@ -103,7 +103,7 @@ class PersonsController < ApplicationController
     # p Person.maximum('id')
     # p Person.sum('id')
     # p Person.includes(:address).all.explain
-    @persons = Person.includes(:address).all
+    @persons = (Person.includes(:address)).all.page(params[:page]).per(3)
     # puts @person.present?
   end
 
@@ -114,7 +114,7 @@ class PersonsController < ApplicationController
       redirect_to @person
     else
       render 'new'
-      #render 'new',  layout: 'person'
+      #render 'new',  lWayout: 'person'
     end
   end
 
