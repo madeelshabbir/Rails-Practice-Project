@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #   resources :addresses
   # end
   # resource :persons
+  # match '/admin', to: AdminApp, via: :all
   resources :persons do
     resources :addresses
     # member do

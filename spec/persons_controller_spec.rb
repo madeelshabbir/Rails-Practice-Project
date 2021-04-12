@@ -1,8 +1,6 @@
 class PersonsController < ApplicationController
   include Personable
 
-  # mount AdminApp, at: '/admin'
-
   #before_action :show_all
   #layout 'person', only: :show
 
